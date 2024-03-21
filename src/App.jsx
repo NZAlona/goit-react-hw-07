@@ -5,13 +5,13 @@ import SearchBox from './components/SearchBox/SearchBox';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from './redux/contactsOps';
-import { getError, getLoading } from './redux/contactsSlice';
+import { selectError, selectLoading } from './redux/contactsSlice';
 import Loader from './components/Loader/Loader';
 
 export default function App() {
   const dispatch = useDispatch();
-  const loading = useSelector(getLoading);
-  const error = useSelector(getError);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
