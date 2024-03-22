@@ -6,7 +6,6 @@ axios.defaults.baseURL = 'https://65fa6df63909a9a65b1a62d9.mockapi.io';
 export const fetchContacts = createAsyncThunk('contacts/fetchAll', async (_, thunkAPI) => {
   try {
     const response = await axios.get('/contacts');
-    console.log(response.data);
     return response.data;
   } catch (e) {
     return thunkAPI.rejectWithValue(e.message);
