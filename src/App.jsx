@@ -1,4 +1,5 @@
 import './App.css';
+import css from './App.module.css';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
@@ -21,8 +22,9 @@ export default function App() {
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
+
       {loading && <Loader />}
-      {error && <p>{error}</p>}
+      {error && <p className={css.textError}>{error}</p>}
 
       <ContactList />
     </>
